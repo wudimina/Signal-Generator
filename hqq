@@ -1,0 +1,300 @@
+[33mcommit f6607e83e0b344c0887b31d0a4cd406f28518f6e[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Tue Apr 19 20:02:50 2016 +0800
+
+    Added option to enable or disable interrupt
+
+[33mcommit ba0d0fa155bd5956bb853a04e97dc919853bf9b0[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Tue Apr 19 20:02:05 2016 +0800
+
+    Performed cleanup for DMA driver */
+
+[33mcommit 7ccd77f562d9a083e574f9fd2a0b7f53bbe7fae2[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Tue Apr 19 19:34:36 2016 +0800
+
+    Added basic DMA functionality
+    
+    The current implementation for the DAM driver only supports circular
+    mode and 32 bit memory registers. It does not support Transfer Error
+    Interrupt and Memory to Memory transfer.
+
+[33mcommit 2ccada55ac3ec81a70c16f95db36c27b15a452a7[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Tue Apr 19 12:27:57 2016 +0800
+
+    Fixed commenting for DAC_init and struct DAC_config
+
+[33mcommit 242d0e25163f7709f2030ed3765e17c1457e0859[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Tue Apr 19 12:24:18 2016 +0800
+
+    Grouped DAC triggering and dma options into a single config structure.
+
+[33mcommit 126344b27026bd98313aa81af5fe4773e89ace89[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Tue Apr 19 11:44:34 2016 +0800
+
+    Added DMA enabling and disabling functionality for DAC Driver.
+    
+    Included options in DAC_init function for enabling or disabling
+    DMA. The current DMA implementation for DAC does not include
+    DMA underrun.
+
+[33mcommit 3f74edca037ba6b0da7c6455ceabfa92d2e6c0a8[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Mon Apr 18 22:55:46 2016 +0800
+
+    Added new files for DMA driver
+
+[33mcommit 5bf533eb0b3fc772e80a3a6abd0d020b33b3a55d[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Thu Apr 14 01:25:13 2016 +0800
+
+    Disabled the pragma flag __use_no_semihosting_swi in Retarget.c
+    
+    Disabling this flag allows us to use scanf.
+
+[33mcommit ea2898227deb43cf9e7ea58e270a786c9c046d65[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Thu Apr 14 01:21:37 2016 +0800
+
+    Added ring buffers for sending and receiving data for USART.
+    
+    Adding the ring buffers allows a clean and complete capture of data
+    inputs as well as sending data as it uses tx and rx interrupts. The
+    USART driver in Serial.c has been modified to utilize interrupts and
+    the ring buffer.
+
+[33mcommit efbe740bbde7dd82366fe4534f734e586c1c5418[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Wed Apr 13 19:29:11 2016 +0800
+
+    Added serial communication functionlality using existing Examples
+    
+    A USART2 driver is copied over from the Blinky example code. Also,
+    the stdio retargetting code is also copied over.
+
+[33mcommit ea442ae5df115f2e7b5a5e89d9016b5653ac192f[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Wed Apr 13 01:20:08 2016 +0800
+
+    Added comment for TIMER_masterMode enumeration
+
+[33mcommit ef90fdcd100897d2ec87fbf9fd5a123487de6494[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Wed Apr 13 01:17:07 2016 +0800
+
+    Added event generation for basic Timer Driver.
+    
+    A dedicated function is created which generates an event when called.
+    Also, an additional configuration is added for TIMER_config which
+    allows the enabling and disabling of UG interrupt generation.
+
+[33mcommit aa83f6b4c192859a9d8719118911e183f445cc12[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Wed Apr 13 00:20:49 2016 +0800
+
+    Swapped position of TIMER enable and disable functions for more intuitive structure
+
+[33mcommit a8a762416b377c734092c7a7971be27ec5008ce1[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Wed Apr 13 00:18:28 2016 +0800
+
+    Added disable function for DAC
+
+[33mcommit b1b19e29f5b9231e1da18e7f32a8d71edeee57dc[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Wed Apr 13 00:12:51 2016 +0800
+
+    Fixed enumeration naming for TIMER_mode
+
+[33mcommit 86c6d30c33fe38fdfaccacd1639cc49b29586573[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Wed Apr 13 00:05:43 2016 +0800
+
+    Added master mode functionality for basic timer driver.
+    
+    A dedicated function is created to add this functionality. Additional
+    configuration for this functionality is also added in the TIMER_config
+    structure.
+
+[33mcommit 9643be4666d06d23b5ea1145a0ec02a4152517de[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Wed Apr 13 00:02:39 2016 +0800
+
+    Added functionality for timer 6 and 7 triggering for DAC.
+    
+    Timer triggering is added for selection from the enumeration list.
+    Also, a dedicated function is written to configure DAC triggering.
+    The DAC_init function will now call this function to configure
+    triggering.
+
+[33mcommit f01fba948960ddae8d799a1ed32f97f29a561d51[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Mon Apr 11 23:22:51 2016 +0800
+
+    Added one shot and continuous functionality for Timer Driver.
+
+[33mcommit da0d4313fd90841b4948222517f46802478b8943[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Mon Apr 11 19:32:05 2016 +0800
+
+    Added support for basic timers for Timer Drivers
+    
+    Added functions for initializing and setting up the basic timers
+    for the STM32F072RB. The basic Timers includes Timer 6 and 7. The
+    current implementation only allows continuous mode.
+
+[33mcommit 6b30bf80eab91b9ce6643179fa2620c6490eb909[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Sun Apr 10 16:10:07 2016 +0800
+
+    Added new files for Timer Driver.
+    
+    New files created are TIMER_DRV.c and TIMER_DRV.h
+
+[33mcommit 49245b5b246b5ed4d96c1cf95598cdcc47d5998b[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Sun Apr 10 15:40:02 2016 +0800
+
+    Fixed spacing for GPIO_enableClock function
+
+[33mcommit 1923f94e14a20427370e89a0b660efc15766328d[m
+Merge: 809451e e6fbdc8
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Sun Apr 10 15:13:23 2016 +0800
+
+    Merge branch 'GPIO_dev'
+    
+    Merged latest driver functions for GPIO.
+
+[33mcommit e6fbdc854eeb91d61584cea7d572497feab6a180[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Sun Apr 10 15:01:36 2016 +0800
+
+    Enabled support for GPIO inputs for GPIO driver.
+    
+    Input configuration selection is now added to the initialization
+    function. Also, read functions are also added for reading GPIO
+    inputs.
+
+[33mcommit a374564f60edaca7dafb9289ad588054cb1c621f[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Sun Apr 10 14:32:17 2016 +0800
+
+    Added initialization functions and output opeartions for GPIO driver.
+
+[33mcommit 809451eac8a15d9275fbe97520fd04bf116883d4[m
+Merge: 525d47f 2c296ce
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Sun Apr 10 12:04:13 2016 +0800
+
+    Merge branch 'GPIO_dev'
+
+[33mcommit 525d47f6b11fefa45eb66d00d97e38274dd64aca[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Sat Apr 9 22:42:53 2016 +0800
+
+    Fixed enumeration naming style for DAC_DRV files.
+
+[33mcommit 2c296ced7578e5c0e63ac90196fc4690cf8fea9a[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Sat Apr 9 21:42:51 2016 +0800
+
+    Added new files for GPIO Driver.
+    
+    Added GPIO_DRV.c and GPIO_DRV.h
+
+[33mcommit 8daa3ab4664497cd35437086060609ef62c8353f[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Sat Apr 9 15:13:24 2016 +0800
+
+    Added software triggering for DAC driver.
+    
+    The DAC_init function has been modified to include this feature.
+    Also dedicated functions for setting the software trigger registers
+    have also been added.
+
+[33mcommit e0982051065f2a4de098ef5dd1b9c60b02d91608[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Sat Apr 9 14:10:21 2016 +0800
+
+    Added new functionality for reading both DAC channels at once.
+    
+    The function DAC_read is renamed to DAC_readSingle and a new
+    function DAC_readDual is added. This is to be consistent with
+    the DAC_write functions which supports sigle and dual writing.
+
+[33mcommit a24fd56ad129cb3a41712d43043de79e47065f8c[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Sat Apr 9 13:40:26 2016 +0800
+
+    Added Dual Mode functionality for DAC driver.
+    
+    Dual Mode is added through the function DAC_writeDual.
+
+[33mcommit 5977d94a1facaf59f28b31eca7a438561f69e803[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Fri Apr 8 19:53:28 2016 +0800
+
+    Fixed coding style for function DAC_init in DAC_DRV.c
+
+[33mcommit 06cd5377126e343d1e8f9a91d79bba039ca6456a[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Fri Apr 8 19:49:09 2016 +0800
+
+    Added 8 and 12 bit resolution selection for DAC Driver.
+    
+    The function DAC_write is replaced with DAC_writeSingle which allows
+    the user to pass in an option of writing with 8 or 12 bit mode. The
+    name single signifies that the function only writes to 1 channel at
+    a time which is similar to DAC_write.
+
+[33mcommit 6d9c7ed3667a5bc634592953e7e0369e3367a720[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Fri Apr 8 17:55:22 2016 +0800
+
+    Removed unused function prototype in DAC_DRV.h
+
+[33mcommit c991bfc64bbfba5ee2c15c3421b3a366c901bc7f[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Fri Apr 8 17:52:45 2016 +0800
+
+    Added usage of channel 2 for DAC driver.
+    
+    The usage for channel 2 is only for Single Mode with no triggering.
+
+[33mcommit 70a47921ebb50d9a98f33275ed8f03aab5dd8fd8[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Thu Apr 7 20:56:30 2016 +0800
+
+    Added basic functionality for DAC driver
+    
+    Added basic initialization, enable, write and read functions. The
+    driver currently only supports channel 1 on Single Mode and writting
+    to the 12 bit right aligned data register.
+
+[33mcommit b05424459c73482f4cf2d88e24e96b3857eb7c9b[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Thu Apr 7 19:14:34 2016 +0800
+
+    Fixed file name under Doxygen comment for DAC_DRV.h
+
+[33mcommit 9d5fa3da6f6daaf0633e96ae915c7f26685bedef[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Wed Apr 6 23:29:08 2016 +0800
+
+    Added new files for implementing DAC Driver code
+    
+    A new source and header file is created for this purpose. It
+    currently does not implement anything.
+
+[33mcommit 3cafd00547e2f364dfabe5168d26f473808f7a56[m
+Author: Dennis Law <cmlaw1993@gmail.com>
+Date:   Wed Apr 6 23:11:46 2016 +0800
+
+    First Commit
+    
+    A basic buildable project on Keil.

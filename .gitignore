@@ -1,0 +1,11 @@
+
+# ignore all files in the Listings/ directory
+Listings/
+
+# ignore all files in the Objects/ directory
+Objects/
+
+#ignore .uvguix.<username> file
+*.uvguix.*
+
+
