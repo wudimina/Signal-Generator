@@ -1,6 +1,6 @@
 #include "WaveGen.h"
 
-uint8_t IsParameterAllowed(uint8_t waveform_types, uint32_t frequency, float amplitude)
+uint8_t IsParameterAllowed(enum WAVEFORM_TYPES waveform_types, uint32_t frequency, float amplitude)
 {
 	uint32_t numberOfSample;
 	uint32_t period_in_ns;
@@ -30,7 +30,7 @@ uint8_t IsParameterAllowed(uint8_t waveform_types, uint32_t frequency, float amp
 	return 1;
 }
 
-static uint8_t ProcessWaveformParam(uint8_t waveform_types, uint32_t frequency, float amplitude, uint32_t* pTiming_ns, uint32_t* pNoofSample)
+static uint8_t ProcessWaveformParam(enum WAVEFORM_TYPES waveform_types, uint32_t frequency, float amplitude, uint32_t* pTiming_ns, uint32_t* pNoofSample)
 {
 	uint32_t period_in_ns;
 
@@ -69,12 +69,12 @@ static uint8_t ProcessWaveformParam(uint8_t waveform_types, uint32_t frequency, 
 }
 
 
-static void DrawWaveform(uint8_t waveform_types, float amplitude, uint32_t timing_ns,	uint32_t noOfSample)
+static void DrawWaveform(enum WAVEFORM_TYPES waveform_types, float amplitude, uint32_t timing_ns,	uint32_t noOfSample)
 {
 	return;
 }
 
-void GenerateWaveform(uint8_t waveform_types, uint32_t frequency, float amplitude)
+void GenerateWaveform(enum WAVEFORM_TYPES waveform_types, uint32_t frequency, float amplitude)
 {
 	uint32_t timing_ns;
 	uint32_t noOfSample;
@@ -83,5 +83,23 @@ void GenerateWaveform(uint8_t waveform_types, uint32_t frequency, float amplitud
 	{
 		DrawWaveform(waveform_types,amplitude,timing_ns,noOfSample);
 	}
+}
+
+
+uint32_t GetMaxFreq(enum WAVEFORM_TYPES waveform_types)
+{
+		return MAX_FREQUENCY;
+}
+uint32_t GetMinFreq(enum WAVEFORM_TYPES waveform_types)
+{
+		return MIN_FREQUENCY;
+}
+float GetMaxAmplitude(void)
+{
+		return MAX_AMPLITUDE_FLOAT;
+}
+float GetMinAmplitude(void)
+{
+		return MIN_AMPLITUDE_FLOAT;
 }
 

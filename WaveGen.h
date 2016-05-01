@@ -1,6 +1,6 @@
 #include "DAC_DRV.h"
 
-enum
+enum WAVEFORM_TYPES
 {
 	WAVEFORM_TYPE_SINE=0,
 	WAVEFORM_TYPE_SAWTOOTH,
@@ -19,5 +19,12 @@ enum
 #define DAC_SAMPLE_MAX_DRAG_TIME_NS	10000
 #define MAX_MEMORY_ALLOWED			1000
 
-extern uint8_t IsParameterAllowed(uint8_t waveform_types, uint32_t frequency, float amplitude);
-extern void GenerateWaveform(uint8_t waveform_types, uint32_t frequency, float amplitude);
+#define MAX_FREQUENCY 100000
+#define MIN_FREQUENCY 1
+
+extern uint8_t IsParameterAllowed(enum WAVEFORM_TYPES waveform_types, uint32_t frequency, float amplitude);
+extern void GenerateWaveform(enum WAVEFORM_TYPES waveform_types, uint32_t frequency, float amplitude);
+extern uint32_t GetMaxFreq(enum WAVEFORM_TYPES waveform_types);
+extern uint32_t GetMinFreq(enum WAVEFORM_TYPES waveform_types);
+extern float GetMaxAmplitude(void);
+extern float GetMinAmplitude(void);
