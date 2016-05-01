@@ -78,11 +78,11 @@ void SystemCoreClockConfigure(void)
 
 /* Data array to be passed to the DMA */
 uint32_t dacData[DMA_DATA_SIZE] = {
-	2000, 2250, 2500, 2750,
-	3000, 3250, 3500, 3750,
-	4000, 3750, 3500, 3250,
-	3000, 2750, 2500, 2250,
-	0, 0, 0, 0
+	4000, 0, 4000, 0,
+	4000, 0, 4000, 0,
+	4000, 0, 4000, 0,
+	4000, 0, 4000, 0,
+	4000, 0, 4000, 0
 };
 
 /** @brief main function
@@ -94,6 +94,7 @@ int main (void)
 	struct TIMER_config timConf;
 	
 	char name[20];
+	
 
 	SystemCoreClockConfigure();                 /* Configure HSI as System Clock */
 	SystemCoreClockUpdate();
@@ -112,13 +113,13 @@ int main (void)
 	dmaConf.numWrite = DMA_DATA_SIZE;
 	dmaConf.readMem = dacData;
 	dmaConf.writeMem = (uint32_t *)(&DAC->DHR12R1);
-	
+
 	DMA_init(DMA_CHN, dmaConf);
 	DMA_enable(DMA_CHN);
 
 	/* Initialize Timer */
-	timConf.count = 30000;
-	timConf.prescale = 300;
+	timConf.count = 10000;
+	timConf.prescale = 1;
 	timConf.mode = TIMER_MODE_CONTINUOUS;
 	timConf.mmode = TIMER_MASTERMODE_UPDATE;
 	timConf.UGInt = TIMER_UGINTERRUPT_DISABLE;
