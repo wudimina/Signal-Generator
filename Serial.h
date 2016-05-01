@@ -18,6 +18,7 @@
 
 extern void SER_Initialize(void);
 extern unsigned char SER_GetChar (void);
+int SER_GetChar_nonBlocking(unsigned char *output);
 extern unsigned char SER_PutChar(unsigned char ch);
 
 #endif

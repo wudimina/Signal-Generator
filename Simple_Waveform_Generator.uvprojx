@@ -410,6 +410,16 @@
               <FileType>1</FileType>
               <FilePath>.\DMA_DRV.c</FilePath>
             </File>
+            <File>
+              <FileName>WaveGen.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\WaveGen.c</FilePath>
+            </File>
+            <File>
+              <FileName>apptree.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\apptree.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -439,6 +449,21 @@
               <FileName>Serial.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Serial.h</FilePath>
+            </File>
+            <File>
+              <FileName>WaveGen.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\WaveGen.h</FilePath>
+            </File>
+            <File>
+              <FileName>apptree.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\apptree.h</FilePath>
+            </File>
+            <File>
+              <FileName>list.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\list.h</FilePath>
             </File>
           </Files>
         </Group>
