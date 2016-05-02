@@ -40,7 +40,7 @@ enum WAVEFORM_TYPES
 
 extern uint8_t IsParameterAllowed(enum WAVEFORM_TYPES waveform_types, uint32_t frequency, float amplitude);
 extern void GenerateWaveform(enum WAVEFORM_TYPES waveform_types, uint32_t frequency, float amplitude);
-extern uint32_t GetMaxFreq(enum WAVEFORM_TYPES waveform_types);
-extern uint32_t GetMinFreq(enum WAVEFORM_TYPES waveform_types);
+extern uint32_t GetMaxFreq(void);
+extern uint32_t GetMinFreq(void);
 extern float GetMaxAmplitude(void);
 extern float GetMinAmplitude(void);

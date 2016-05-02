@@ -100,12 +100,12 @@ static void GenerateTriangularTable(uint32_t NoOfSample, uint32_t Amplitude_In_R
 
 	for(i=0;i<NoOfSample/2;i++)
 	{
-		DMAData[i]=(Amplitude_In_Resolution*i/NoOfSample/2);
+		DMAData[i]=2*(Amplitude_In_Resolution*i/NoOfSample);
 	}
 
 	for(i=0;i<NoOfSample/2;i++)
 	{
-		DMAData[i+NoOfSample/2]=Amplitude_In_Resolution-(Amplitude_In_Resolution*i/NoOfSample/2);
+		DMAData[i+NoOfSample/2]=Amplitude_In_Resolution-(2*(Amplitude_In_Resolution*i/NoOfSample));
 	}
 }
 
@@ -226,12 +226,12 @@ void GenerateWaveform(enum WAVEFORM_TYPES waveform_types, uint32_t frequency, fl
 	}
 }
 
-uint32_t GetMaxFreq(enum WAVEFORM_TYPES waveform_types)
+uint32_t GetMaxFreq(void)
 {
 		return MAX_FREQUENCY;
 }
 
-uint32_t GetMinFreq(enum WAVEFORM_TYPES waveform_types)
+uint32_t GetMinFreq(void)
 {
 		return MIN_FREQUENCY;
 }

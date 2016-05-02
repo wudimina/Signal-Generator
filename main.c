@@ -156,10 +156,10 @@ void change_frequency(struct apptree_node *parent, int child_idx)
 	unsigned int new_freq;
 	int ret;
 	
-	max_freq = 2000;
-	//max_freq = get_max_frequency();
-	min_freq = 1;
-	//min_freq = get_min_frequency();
+	//max_freq = 2000;
+	max_freq = GetMaxFreq();
+	//min_freq = 1;
+	min_freq = GetMinFreq();
 	
 	print_blankscreen();
 	
@@ -204,10 +204,10 @@ void change_amplitude(struct apptree_node *parent, int child_idx)
 	float new_amp;
 	int ret;
 	
-	max_amp = 3.3;
-	//max_freq = get_max_frequency();
-	min_amp = 1.0;
-	//min_freq = get_min_frequency();
+	//max_amp = 3.3;
+	max_amp = GetMaxAmplitude();
+	//min_amp = 1.0;
+	min_amp = GetMinAmplitude();
 	
 	print_blankscreen();
 	
