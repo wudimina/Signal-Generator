@@ -33,7 +33,7 @@
 #define __USART_BRR(__PCLK, __BAUD) ((__DIVMANT(__PCLK, __BAUD) << 4)|(__DIVFRAQ(__PCLK, __BAUD) & 0x0F))
 
 /** Ring buffer size */
-#define SER_RBUF_SIZE	50
+#define SER_RBUF_SIZE	500
 
 /** The structure for a ring buffer */
 struct SER_ringBuf {
@@ -149,6 +149,11 @@ unsigned char SER_GetChar (void)
 
 	while(rx_rbuf_read(&input));
 	return input;
+}
+
+int SER_GetChar_nonBlocking(unsigned char *output)
+{
+	return (rx_rbuf_read(output));
 }
 
 /** @brief Function for handling rx interrupts.
